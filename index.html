@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marshall Nguyen — Cross-border sales, Taipei × Saigon</title>
+<meta name="description" content="Nguyễn Hoàng Huy (Marshall) — 5 years selling property to Vietnamese, Taiwanese and Chinese buyers. Open to work.">
+
+<meta property="og:title" content="Marshall Nguyen — Cross-border sales, Taipei × Saigon">
+<meta property="og:description" content="5 years · 1,150 clients · four languages · builds his own tools. Open to work.">
+<meta property="og:image" content="marshall.jpg">
+<meta property="og:type" content="profile">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Noto+Sans+TC:wght@400;500&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#1a1a1a',
+          paper: '#fbf9f3',
+          cream: '#f0eadc',
+          rust: '#862633',
+          mute: '#5a5a5a',
+          line: '#d8d0bd',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #fbf9f3; color: #1a1a1a; }
+  .serif { font-family: 'Newsreader', Georgia, serif; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  [lang^="zh"] { font-family: 'Noto Sans TC', 'Noto Sans SC', sans-serif; }
+  [lang^="zh"] .serif { font-family: 'Newsreader', 'Noto Sans TC', serif; }
+
+  /* Editorial type */
+  .lead { font-family: 'Newsreader', Georgia, serif; font-size: 1.4rem; line-height: 1.55;
+          letter-spacing: -0.01em; color: #2a2a2a; }
+  .meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em;
+          color: #5a5a5a; text-transform: uppercase; }
+
+  /* Rules / separators */
+  .hairline { border-top: 1px solid #d8d0bd; }
+  .double-rule { border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a;
+                 padding: 24px 0; position: relative; }
+  .double-rule::after {
+    content: ''; position: absolute; left: 0; right: 0; top: 2px;
+    border-top: 1px solid #1a1a1a;
+  }
+  .double-rule::before {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 2px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  /* Definition list */
+  .dl { display: grid; grid-template-columns: 110px 1fr; gap: 4px 18px; }
+  .dl dt { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em;
+           color: #5a5a5a; text-transform: uppercase; padding-top: 4px; }
+  .dl dd { font-size: 15px; padding-bottom: 8px; border-bottom: 1px dotted #d8d0bd; }
+  .dl dd:last-child { border-bottom: none; }
+
+  /* Big numbers — quiet, not splashy */
+  .stat-num { font-family: 'Newsreader', serif; font-size: 2.6rem; line-height: 1; font-weight: 500; }
+
+  /* Drop cap for opening graf */
+  .dropcap::first-letter {
+    font-family: 'Newsreader', serif; float: left; font-size: 4.2em;
+    line-height: 0.9; margin: 0.05em 0.08em -0.1em 0; font-weight: 500; color: #862633;
+  }
+
+  /* Pull quote */
+  .pullquote { font-family: 'Newsreader', serif; font-style: italic;
+               font-size: 1.6rem; line-height: 1.4; color: #2a2a2a; }
+
+  /* Hand-style underline */
+  .underline-rust { background-image: linear-gradient(transparent 60%, #f0d4d8 60%); }
+
+  /* Links */
+  a.link { text-decoration: underline; text-decoration-color: #862633;
+           text-decoration-thickness: 1px; text-underline-offset: 3px;
+           color: #1a1a1a; transition: color 0.15s; }
+  a.link:hover { color: #862633; }
+
+  /* Buttons — base */
+  .btn { display: inline-block; padding: 12px 24px; font-size: 14px; font-weight: 500;
+         border-radius: 0; transition: all 0.15s; }
+  .btn-primary { background: #1a1a1a; color: #fbf9f3; }
+  .btn-primary:hover { background: #862633; }
+  .btn-ghost { border: 1px solid #1a1a1a; color: #1a1a1a; }
+  .btn-ghost:hover { background: #1a1a1a; color: #fbf9f3; }
+
+  /* ---------- CV Preview Modal ---------- */
+  .cv-modal {
+    position: fixed; inset: 0; z-index: 9998;
+    display: flex; align-items: center; justify-content: center;
+    padding: 32px 16px;
+    background: rgba(26,26,26,0.55);
+    backdrop-filter: blur(6px) saturate(1.2);
+    -webkit-backdrop-filter: blur(6px) saturate(1.2);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .cv-modal.cv-show { opacity: 1; pointer-events: auto; }
+  .cv-modal-card {
+    position: relative;
+    width: min(900px, 100%); height: min(85vh, 1200px);
+    background: #fbf9f3;
+    border-radius: 16px;
+    box-shadow: 0 30px 80px -10px rgba(0,0,0,0.4);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px) scale(0.96);
+    transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
+  }
+  .cv-show .cv-modal-card { transform: translateY(0) scale(1); }
+  .cv-modal-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid #d8d0bd;
+  }
+  .cv-modal-title { font-family: 'Newsreader', Georgia, serif; font-size: 18px; font-weight: 600; color: #1a1a1a; }
+  .cv-modal-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: #5a5a5a; margin-top: 3px; }
+  .cv-modal-close {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: transparent; border: none; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #5a5a5a; transition: all 0.2s;
+    font-size: 22px; line-height: 1;
+  }
+  .cv-modal-close:hover { background: rgba(26,26,26,0.06); color: #1a1a1a; }
+  .cv-modal-body { flex: 1; overflow: hidden; background: #e8e2d1; }
+  .cv-modal-body iframe { width: 100%; height: 100%; border: 0; }
+  .cv-modal-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 14px 20px;
+    border-top: 1px solid #d8d0bd;
+    background: #f5efe1;
+  }
+  .cv-modal-note { font-size: 12px; color: #5a5a5a; font-family: 'Inter', sans-serif; }
+  @media (max-width: 600px) {
+    .cv-modal { padding: 12px; }
+    .cv-modal-card { height: 92vh; border-radius: 12px; }
+    .cv-modal-head, .cv-modal-foot { padding: 12px 14px; }
+    .cv-modal-title { font-size: 16px; }
+    .cv-modal-foot { flex-direction: column; align-items: stretch; }
+    .cv-modal-note { text-align: center; }
+  }
+
+  /* ---------- Liquid Glass Button (aliimam / 21st.dev pattern) ---------- */
+  /* Translucent pill with carved-glass inset shadows + SVG turbulence
+     displacement on the background. Premium "glass through which the page
+     ripples" look — pure CSS + an SVG filter, no JS. */
+  .btn-liquid {
+    position: relative; isolation: isolate;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 30px;
+    font-size: 14px; font-weight: 500;
+    color: #1a1a1a;
+    background: transparent;
+    border: none; border-radius: 9999px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+    text-decoration: none;
+  }
+  .btn-liquid:hover { transform: scale(1.04); }
+  .btn-liquid:active { transform: scale(0.98); transition-duration: 0.1s; }
+  /* Carved glass frame — many layered inset shadows */
+  .btn-liquid::before {
+    content: ''; position: absolute; inset: 0;
+    border-radius: inherit; pointer-events: none;
+    box-shadow:
+      0 0 6px rgba(0,0,0,0.03),
+      0 2px 6px rgba(0,0,0,0.08),
+      inset 3px 3px 0.5px -3px rgba(0,0,0,0.9),
+      inset -3px -3px 0.5px -3px rgba(0,0,0,0.85),
+      inset 1px 1px 1px -0.5px rgba(0,0,0,0.6),
+      inset -1px -1px 1px -0.5px rgba(0,0,0,0.6),
+      inset 0 0 6px 6px rgba(0,0,0,0.12),
+      inset 0 0 2px 2px rgba(0,0,0,0.06),
+      0 0 12px rgba(255,255,255,0.4);
+    transition: box-shadow 0.3s;
+  }
+  /* Liquid ripple — only renders on Chromium / Safari TP */
+  .btn-liquid::after {
+    content: ''; position: absolute; inset: 0;
+    border-radius: inherit; pointer-events: none;
+    z-index: -1; overflow: hidden;
+    backdrop-filter: url("#liquid-glass") blur(2px);
+    -webkit-backdrop-filter: blur(4px); /* Safari fallback */
+  }
+  .btn-liquid > span { position: relative; z-index: 1; }
+  /* Crimson tint on hover */
+  .btn-liquid:hover { color: #862633; }
+  .btn-liquid:hover::before { box-shadow:
+      0 0 8px rgba(134,38,51,0.15),
+      0 4px 12px rgba(134,38,51,0.18),
+      inset 3px 3px 0.5px -3px rgba(134,38,51,0.7),
+      inset -3px -3px 0.5px -3px rgba(134,38,51,0.65),
+      inset 1px 1px 1px -0.5px rgba(134,38,51,0.5),
+      inset -1px -1px 1px -0.5px rgba(134,38,51,0.5),
+      inset 0 0 6px 6px rgba(134,38,51,0.10),
+      inset 0 0 2px 2px rgba(134,38,51,0.05),
+      0 0 16px rgba(255,255,255,0.5); }
+
+  /* ---------- Lang switcher — sliding-thumb tabs (21st.dev animated-tabs pattern) ----------
+     Single dark "thumb" slides under the active tab. No flicker, no
+     opacity hacks — pure transform + width transition with spring easing.
+     The text colour swap is the only thing that toggles per click. */
+  .lang-tabs {
+    position: relative;
+    display: inline-flex; align-items: center;
+    padding: 3px;
+    border-radius: 9999px;
+    background: rgba(26,26,26,0.04);
+    box-shadow: inset 0 0 0 1px rgba(26,26,26,0.05);
+  }
+  /* Thumb = carved liquid-glass pill (same vocabulary as "Write me an email").
+     Translucent dark base + multi-layer inset highlights + SVG backdrop
+     displacement so the cream paper behind ripples through the thumb. */
+  .lang-thumb {
+    position: absolute;
+    top: 3px; bottom: 3px;
+    left: 0; width: 0;
+    background: linear-gradient(180deg, rgba(42,42,42,0.94) 0%, rgba(20,20,20,0.96) 100%);
+    border-radius: 9999px;
+    transform: translateX(var(--thumb-x, 0px));
+    transition: transform 0.36s cubic-bezier(.34,1.56,.64,1),
+                width 0.36s cubic-bezier(.34,1.56,.64,1);
+    pointer-events: none;
+    z-index: 0;
+    isolation: isolate;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.2),
+      0 6px 14px -4px rgba(26,26,26,0.28),
+      inset 1px 1px 0.5px -0.5px rgba(255,255,255,0.55),
+      inset -1px -1px 0.5px -0.5px rgba(255,255,255,0.18),
+      inset 0 0 4px 4px rgba(255,255,255,0.06),
+      inset 0 0 12px rgba(0,0,0,0.45),
+      0 0 0 0.5px rgba(26,26,26,0.8);
+  }
+  /* Top sheen — bright crescent at the top of the pill */
+  .lang-thumb::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg,
+                rgba(255,255,255,0.18) 0%,
+                rgba(255,255,255,0.04) 38%,
+                transparent 60%);
+    pointer-events: none;
+  }
+  /* Liquid ripple — SVG turbulence displacement of whatever sits behind */
+  .lang-thumb::after {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    backdrop-filter: url("#liquid-glass") blur(1px);
+    -webkit-backdrop-filter: blur(3px);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.45;
+  }
+  .lang-tab {
+    position: relative; z-index: 1;
+    padding: 4px 11px;
+    background: transparent; border: none; cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    color: #5a5a5a;
+    border-radius: 9999px;
+    transition: color 0.2s ease;
+    line-height: 1.4;
+  }
+  .lang-tab:hover { color: #1a1a1a; }
+  .lang-tab.active { color: #fbf9f3; }
+
+  /* ---------- Hero typography — single font, single weight, no gradient ---------- */
+  /* SF Pro Display on iOS/macOS, Inter elsewhere. Same weight + colour for
+     every line so the eye reads one statement, not three competing styles. */
+  .hero-apple {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "Inter", "Segoe UI", system-ui, "Noto Sans TC", "Noto Sans SC", sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.5rem, 7vw, 4.75rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: #1d1d1f;
+  }
+  .hero-apple .hero-em { /* "property," — same style as the rest, no italic */
+    font-weight: 600;
+    font-style: normal;
+  }
+  /* CJK nới tracking nhẹ cho dễ đọc */
+  [lang^="zh"] .hero-apple { letter-spacing: -0.015em; font-weight: 700; }
+
+  /* Photo treatment */
+  .photo-wrap { position: relative; }
+  .photo-wrap img { filter: contrast(1.02) saturate(0.95); }
+  .photo-wrap::after {
+    content: ''; position: absolute; inset: 0;
+    box-shadow: inset 0 0 0 1px rgba(26,26,26,0.1);
+    pointer-events: none;
+  }
+
+  /* Project entry */
+  .project { display: grid; grid-template-columns: 80px 1fr; gap: 24px;
+             padding: 28px 0; border-top: 1px solid #d8d0bd; }
+  .project-num { font-family: 'Newsreader', serif; font-size: 3rem; font-weight: 500;
+                 color: #862633; line-height: 1; }
+
+  /* Animation */
+  @keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  .reveal { animation: slideUp 0.7s ease-out both; }
+
+  /* Social icon — muted by default, official brand color on hover */
+  /* Icons sourced from Iconify mirror of Simple Icons (the official monochrome brand SVGs each company distributes). */
+  .social-link {
+    position: relative;
+    width: 38px; height: 38px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: all 0.2s ease;
+    overflow: visible;
+  }
+  .social-link .icon {
+    width: 18px; height: 18px;
+    background-color: #b8af9c; /* muted, blends into paper bg */
+    mask-position: center; mask-repeat: no-repeat; mask-size: contain;
+    -webkit-mask-position: center; -webkit-mask-repeat: no-repeat; -webkit-mask-size: contain;
+    transition: background-color 0.2s ease;
+  }
+  .social-link:hover {
+    border-color: rgba(26,26,26,0.08);
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 26, 26, 0.08);
+  }
+  /* Official Simple Icons (via Iconify) — colored on hover only */
+  [data-brand="gmail"]     .icon { mask-image: url('https://api.iconify.design/simple-icons/gmail.svg');     -webkit-mask-image: url('https://api.iconify.design/simple-icons/gmail.svg'); }
+  [data-brand="gmail"]:hover     .icon { background-color: #EA4335; }
+  [data-brand="zalo"]      .icon { mask-image: url('https://api.iconify.design/simple-icons/zalo.svg');      -webkit-mask-image: url('https://api.iconify.design/simple-icons/zalo.svg'); }
+  [data-brand="zalo"]:hover      .icon { background-color: #0068FF; }
+  [data-brand="line"]      .icon { mask-image: url('https://api.iconify.design/simple-icons/line.svg');      -webkit-mask-image: url('https://api.iconify.design/simple-icons/line.svg'); }
+  [data-brand="line"]:hover      .icon { background-color: #00C300; }
+  [data-brand="linkedin"]  .icon { mask-image: url('https://api.iconify.design/simple-icons/linkedin.svg');  -webkit-mask-image: url('https://api.iconify.design/simple-icons/linkedin.svg'); }
+  [data-brand="linkedin"]:hover  .icon { background-color: #0A66C2; }
+  [data-brand="github"]    .icon { mask-image: url('https://api.iconify.design/simple-icons/github.svg');    -webkit-mask-image: url('https://api.iconify.design/simple-icons/github.svg'); }
+  [data-brand="github"]:hover    .icon { background-color: #181717; }
+  [data-brand="instagram"] .icon { mask-image: url('https://api.iconify.design/simple-icons/instagram.svg'); -webkit-mask-image: url('https://api.iconify.design/simple-icons/instagram.svg'); }
+  [data-brand="instagram"]:hover .icon { background-color: #E4405F; }
+  [data-brand="facebook"]  .icon { mask-image: url('https://api.iconify.design/simple-icons/facebook.svg');  -webkit-mask-image: url('https://api.iconify.design/simple-icons/facebook.svg'); }
+  [data-brand="facebook"]:hover  .icon { background-color: #1877F2; }
+  .social-link[data-tip]::before,
+  .social-link[data-tip]::after {
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  .social-link[data-tip]::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: #1a1a1a;
+    color: #fbf9f3;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    z-index: 50;
+  }
+  .social-link[data-tip]::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    border: 5px solid transparent;
+    border-top-color: #1a1a1a;
+    z-index: 50;
+  }
+  .social-link[data-tip]:hover::before,
+  .social-link[data-tip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  @media (max-width: 640px) {
+    .stat-num { font-size: 2rem; }
+    .lead { font-size: 1.15rem; }
+    .pullquote { font-size: 1.25rem; }
+    .project { grid-template-columns: 60px 1fr; gap: 16px; }
+    .project-num { font-size: 2.2rem; }
+    .dl { grid-template-columns: 95px 1fr; gap: 4px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =================== TOP META BAR =================== -->
+<div class="border-b border-line bg-paper sticky top-0 z-40 backdrop-blur-sm bg-paper/95">
+  <div class="max-w-4xl mx-auto px-6 py-2.5 flex items-center justify-between text-xs">
+    <div class="mono text-mute">
+      <span data-i18n="topUpdate">Updated May 2026</span>
+    </div>
+    <div class="lang-tabs" role="tablist" aria-label="Language">
+      <div class="lang-thumb" id="lang-thumb" aria-hidden="true"></div>
+      <button class="lang-tab" data-lang="en" role="tab">EN</button>
+      <button class="lang-tab" data-lang="vi" role="tab">VI</button>
+      <button class="lang-tab" data-lang="zh-TW" role="tab">繁中</button>
+      <button class="lang-tab" data-lang="zh-CN" role="tab">简中</button>
+    </div>
+  </div>
+</div>
+
+<main class="max-w-4xl mx-auto px-6">
+
+  <!-- =================== HERO =================== -->
+  <header class="pt-16 pb-12 reveal">
+    <div class="meta mb-6" data-i18n="kicker">Portfolio · Open to work</div>
+    <h1 class="hero-apple mb-6">
+      <span data-i18n="heroLine1">Selling</span><br>
+      <span class="hero-em" data-i18n="heroLine2">property,</span><br>
+      <span data-i18n="heroLine3">writing</span> <span class="underline-rust" data-i18n="heroLine4">code.</span>
+    </h1>
+    <p class="lead max-w-xl" data-i18n="heroSub">
+      I'm Marshall — five years selling apartments and houses to Vietnamese, Taiwanese and Chinese buyers. I also build the websites and tools that run the business. Looking for the next chapter.
+    </p>
+  </header>
+
+  <!-- =================== PROFILE BLOCK =================== -->
+  <section class="hairline pt-12 pb-16 grid md:grid-cols-5 gap-10">
+
+    <div class="md:col-span-2">
+      <div class="photo-wrap aspect-[4/5] bg-cream">
+        <img src="marshall.jpg" alt="Marshall Nguyen Hoang Huy"
+             class="w-full h-full object-cover"
+             onerror="this.style.display='none'; this.parentElement.innerHTML+='<div class=&quot;w-full h-full flex items-end justify-end p-6 serif text-8xl text-rust/30&quot;>M.</div>'">
+      </div>
+      <p class="meta mt-3" data-i18n="photoCaption">Taipei, autumn 2025</p>
+    </div>
+
+    <div class="md:col-span-3">
+      <h2 class="serif text-4xl font-medium mb-1 leading-none">
+        Nguyễn Hoàng Huy
+      </h2>
+      <p class="serif italic text-xl text-mute mb-6">Marshall · 阮煌輝</p>
+
+      <dl class="dl">
+        <dt data-i18n="dlFrom">From</dt>
+        <dd data-i18n="dlFromVal">Saigon, currently working in Taipei</dd>
+
+        <dt data-i18n="dlWork">Currently</dt>
+        <dd data-i18n="dlWorkVal">Production operator at Unimicron (S1/Sy, probation). Independent real-estate agent on the side at Hoàng Sâm BĐS.</dd>
+
+        <dt data-i18n="dlLooking">Looking for</dt>
+        <dd data-i18n="dlLookingVal">A sales / BD / GTM seat where Vietnamese, Mandarin and shipping-your-own-tools all earn their keep.</dd>
+
+        <dt data-i18n="dlLangs">Languages</dt>
+        <dd data-i18n="dlLangsVal">Vietnamese · English (IELTS) · 中文 (繁 & 简)</dd>
+
+        <dt data-i18n="dlEdu">Education</dt>
+        <dd data-i18n="dlEduVal">Foreign Trade University, HCMC · GPA 4.00. Second bachelor at Ming Chuan University 銘傳大學, Taipei. Master started, paused while I figure out the right next step.</dd>
+      </dl>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <button type="button" class="btn-liquid" onclick="document.getElementById('cv-modal').classList.add('cv-show'); document.body.style.overflow='hidden';"><span data-i18n="btnCV">Preview CV</span></button>
+      </div>
+
+      <!-- Social icons — official Simple-Icons brand glyphs (via Iconify mirror) -->
+      <!-- Muted by default to match paper bg, official brand color on hover -->
+      <div class="mt-7 flex flex-wrap items-center gap-2.5">
+        <a href="mailto:nhhuy130@gmail.com" data-brand="gmail" data-tip="nhhuy130@gmail.com" aria-label="Gmail" class="social-link"><span class="icon" aria-hidden="true"></span></a>
+        <a href="https://zalo.me/0909326188" target="_blank" rel="noopener" data-brand="zalo" data-tip="Zalo · 0909 326 188" aria-label="Zalo" class="social-link"><span class="icon" aria-hidden="true"></span></a>
+        <a href="https://line.me/ti/p/~marshallmarshall1308" target="_blank" rel="noopener" data-brand="line" data-tip="LINE · marshallmarshall1308" aria-label="LINE" class="social-link"><span class="icon" aria-hidden="true"></span></a>
+        <a href="https://www.linkedin.com/in/marshall-ng-64a157381/" target="_blank" rel="noopener" data-brand="linkedin" data-tip="LinkedIn · Marshall Ng" aria-label="LinkedIn" class="social-link"><span class="icon" aria-hidden="true"></span></a>
+        <a href="https://github.com/mrdeathisreal" target="_blank" rel="noopener" data-brand="github" data-tip="github.com/mrdeathisreal" aria-label="GitHub" class="social-link"><span class="icon" aria-hidden="true"></span></a>
+        <a href="https://www.instagram.com/mrdeathisreal" target="_blank" rel="noopener" data-brand="instagram" data-tip="Instagram · @mrdeathisreal" aria-label="Instagram" class="social-link"><span class="icon" aria-hidden="true"></span></a>
+        <a href="https://www.facebook.com/hoang.huy.479254" target="_blank" rel="noopener" data-brand="facebook" data-tip="Facebook · Hoàng Huy" aria-label="Facebook" class="social-link"><span class="icon" aria-hidden="true"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== NUMBERS =================== -->
+  <section class="hairline py-12">
+    <p class="meta mb-6" data-i18n="numLabel">By the numbers</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div>
+        <div class="stat-num">1,150<span class="text-mute text-2xl">+</span></div>
+        <p class="text-sm text-mute mt-1" data-i18n="numClients">clients across 5 years</p>
+      </div>
+      <div>
+        <div class="stat-num">4<span class="text-mute text-2xl">.00</span></div>
+        <p class="text-sm text-mute mt-1" data-i18n="numGpa">GPA at FTU</p>
+      </div>
+      <div>
+        <div class="stat-num">4</div>
+        <p class="text-sm text-mute mt-1" data-i18n="numLangs">languages I work in daily</p>
+      </div>
+      <div>
+        <div class="stat-num">2</div>
+        <p class="text-sm text-mute mt-1" data-i18n="numCities">cities I move between</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== ESSAY / SHORT BIO =================== -->
+  <section class="py-16 max-w-2xl">
+    <p class="meta mb-3" data-i18n="essayLabel">A short note</p>
+    <p class="serif text-lg leading-relaxed text-ink/90 dropcap mb-5" data-i18n="essayP1">
+      Most people in real estate either know the market or know technology. I ended up doing both, mostly by accident. The Taiwanese buyers I work with wanted help that didn't exist in Vietnamese — so I learned 中文. The CRM I needed didn't fit my workflow — so I built one. Five years later that's still how I operate: figure out what's missing, learn what I need, ship.
+    </p>
+    <p class="serif text-lg leading-relaxed text-ink/90" data-i18n="essayP2">
+      I just finished my degree at Foreign Trade University. Now I'm looking for a place where someone who can talk to a 阿姨 in Taipei about her son's apartment, then write the code that tracks the deal, is actually useful. If that sounds like your team, write to me.
+    </p>
+  </section>
+
+  <!-- =================== THINGS I DO =================== -->
+  <section class="hairline py-12">
+    <p class="meta mb-8" data-i18n="doLabel">What I do</p>
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <div>
+        <h3 class="serif text-2xl font-medium mb-2" data-i18n="do1Title">Sales</h3>
+        <p class="text-sm text-mute leading-relaxed" data-i18n="do1Body">
+          Five years of property sales, mostly cross-border. Build the funnel myself: short-form video, Zalo follow-ups, viewings, deposit, paperwork. Comfortable with deal sizes from rentals to villas above twenty billion VND.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="serif text-2xl font-medium mb-2" data-i18n="do2Title">Building things</h3>
+        <p class="text-sm text-mute leading-relaxed" data-i18n="do2Body">
+          HTML, CSS, JavaScript, Tailwind. Firebase end-to-end — Hosting, Firestore, Auth, Cloud Functions. Light Node.js. I use AI tools (Gemini, Claude) as part of the workflow, not as a gimmick.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="serif text-2xl font-medium mb-2" data-i18n="do3Title">Working across cultures</h3>
+        <p class="text-sm text-mute leading-relaxed" data-i18n="do3Body">
+          Fluent in four languages, lived in both Vietnam and Taiwan. The unglamorous parts of cross-border work — explaining VN property law in 中文, navigating which bank gives loans to which passport — that's where I add the most value.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================== PROJECTS / WORK =================== -->
+  <section class="py-12">
+    <p class="meta mb-2" data-i18n="workLabel">Things I've shipped</p>
+
+    <div class="project">
+      <div class="project-num">01</div>
+      <div>
+        <h3 class="serif text-2xl font-medium mb-1">Hoàng Sâm BĐS</h3>
+        <p class="meta mb-3" data-i18n="proj1Meta">2025 — present · built solo</p>
+        <p class="text-base leading-relaxed text-ink/85 mb-3" data-i18n="proj1Body">
+          A real-estate site for my own business. Firebase Hosting, Firestore for listings, Cloud Functions to proxy Gemini for the AI chat (so users don't burn through a shared key), and a multi-language UI. Real production traffic from Vietnamese and Taiwanese buyers.
+        </p>
+        <a href="https://hoangsam-bds.web.app" target="_blank" class="link text-sm" data-i18n="proj1Link">→ hoangsam-bds.web.app</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-num">02</div>
+      <div>
+        <h3 class="serif text-2xl font-medium mb-1" data-i18n="proj2Title">A working sales funnel</h3>
+        <p class="meta mb-3" data-i18n="proj2Meta">2021 — present · 1,150+ clients</p>
+        <p class="text-base leading-relaxed text-ink/85 mb-3" data-i18n="proj2Body">
+          The unglamorous one. TikTok and Facebook content in the right language for each audience, Zalo qualification, in-person viewings, deposit and paperwork. Nothing here is automated end-to-end; the human steps are where the deals close.
+        </p>
+        <a href="mailto:nhhuy130@gmail.com?subject=Ask%20about%20the%20funnel" class="link text-sm" data-i18n="proj2Link">→ ask me for the playbook</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-num">03</div>
+      <div>
+        <h3 class="serif text-2xl font-medium mb-1" data-i18n="proj3Title">Internal CRM &amp; AI workflows</h3>
+        <p class="meta mb-3" data-i18n="proj3Meta">2024 — present · daily use</p>
+        <p class="text-base leading-relaxed text-ink/85 mb-3" data-i18n="proj3Body">
+          Off-the-shelf CRMs didn't fit how cross-border deals actually move. So: a single-file CRM that runs offline, a Notion mirror for multi-device sync, and a small set of Gemini prompts I trust enough to use in front of real clients. Boring, but it works.
+        </p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-num">04</div>
+      <div>
+        <h3 class="serif text-2xl font-medium mb-1" data-i18n="proj4Title">QC at Askey Computer</h3>
+        <p class="meta mb-3" data-i18n="proj4Meta">Taipei · earlier</p>
+        <p class="text-base leading-relaxed text-ink/85" data-i18n="proj4Body">
+          Two years of quality control before the real-estate path. Tedious, useful — taught me to write things down, follow checklists, and treat a process like something you can edit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== TESTIMONIAL =================== -->
+  <section class="double-rule my-12 text-center max-w-2xl mx-auto">
+    <p class="pullquote px-4" data-i18n="testimonial">
+      "He's the only agent I know who can explain Vietnamese property law in 中文 without anything getting lost."
+    </p>
+    <p class="meta mt-4" data-i18n="testimonialAttr">Taiwanese investor · 3 deals · 2024 — 2025</p>
+  </section>
+
+  <!-- =================== CLOSING / CTA =================== -->
+  <section class="py-16">
+    <h2 class="serif text-5xl md:text-6xl font-medium leading-tight mb-6" data-i18n="closeTitle">
+      Want to talk?
+    </h2>
+    <p class="lead max-w-xl mb-8" data-i18n="closeSub">
+      Email is fastest. The orb in the corner is an AI that's read this whole page — it can answer most recruiter questions in four languages while I'm asleep.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <a href="mailto:nhhuy130@gmail.com?subject=Hi%20Marshall" class="btn-liquid"><span data-i18n="btnTalk">Write me an email</span></a>
+    </div>
+  </section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="border-t border-line mt-12 py-8">
+  <div class="max-w-4xl mx-auto px-6 mono text-xs text-mute text-center">
+    Marshall Ng · 2026 · <a href="mailto:nhhuy130@gmail.com" class="hover:text-ink underline-offset-2">nhhuy130@gmail.com</a>
+  </div>
+</footer>
+
+<!-- =================== CV PREVIEW MODAL =================== -->
+<div class="cv-modal" id="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title" onclick="if(event.target===this){this.classList.remove('cv-show');document.body.style.overflow='';}">
+  <div class="cv-modal-card">
+    <div class="cv-modal-head">
+      <div>
+        <div class="cv-modal-title" id="cv-modal-title" data-i18n="cvModalTitle">Curriculum Vitae</div>
+        <div class="cv-modal-meta" data-i18n="cvModalMeta">Marshall Ng Hoang Huy · May 2026</div>
+      </div>
+      <button type="button" class="cv-modal-close" aria-label="Close" onclick="document.getElementById('cv-modal').classList.remove('cv-show');document.body.style.overflow='';">×</button>
+    </div>
+    <div class="cv-modal-body">
+      <iframe src="Marshall_Nguyen_CV_2026.pdf#view=FitH" title="Marshall CV preview" loading="lazy"></iframe>
+    </div>
+    <div class="cv-modal-foot">
+      <span class="cv-modal-note" data-i18n="cvModalNote">If preview doesn't load on your device, tap Download.</span>
+      <a href="Marshall_Nguyen_CV_2026.pdf" download class="btn-liquid"><span data-i18n="cvModalDownload">Download PDF</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== LIQUID GLASS SVG FILTER (shared) =================== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="liquid-glass" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05 0.05" numOctaves="1" seed="1" result="turbulence"/>
+      <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise"/>
+      <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="70" xChannelSelector="R" yChannelSelector="B" result="displaced"/>
+      <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur"/>
+      <feComposite in="finalBlur" in2="finalBlur" operator="over"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- =================== CHAT WIDGET =================== -->
+<script src="chat-widget.js?v=15"
+        data-mode="portfolio"
+        data-api="https://marshall-ai.nhhuy130.workers.dev/portfolio-chat"
+        data-lang="auto"
+        data-accent="#862633"></script>
+
+<!-- =================== i18n =================== -->
+<script>
+const I18N = {
+  en: {
+    topUpdate: "Updated May 2026",
+    kicker: "Portfolio · Open to work",
+    heroLine1: "Selling", heroLine2: "property,", heroLine3: "writing", heroLine4: "code.",
+    heroSub: "I'm Marshall — five years selling apartments and houses to Vietnamese, Taiwanese and Chinese buyers. I also build the websites and tools that run the business. Looking for the next chapter.",
+    photoCaption: "Taipei, autumn 2025",
+    dlFrom: "From", dlFromVal: "Saigon, currently working in Taipei",
+    dlWork: "Currently", dlWorkVal: "Production operator at Unimicron (S1/Sy, probation). Independent real-estate agent on the side at Hoàng Sâm BĐS.",
+    dlLooking: "Looking for", dlLookingVal: "A sales / BD / GTM seat where Vietnamese, Mandarin and shipping-your-own-tools all earn their keep.",
+    dlLangs: "Languages", dlLangsVal: "Vietnamese · English (IELTS) · 中文 (繁 & 简)",
+    dlEdu: "Education", dlEduVal: "Foreign Trade University, HCMC — graduated 2023, GPA 4.00. Second bachelor at Ming Chuan University 銘傳大學, Taipei — graduated 2025. Master's at Ming Chuan, paused while I figure out the right next step.",
+    dlContact: "Get in touch",
+    btnCV: "Preview CV", dockCV: "Preview CV", cvModalTitle: "Curriculum Vitae", cvModalMeta: "Marshall Ng Hoang Huy · May 2026", cvModalNote: "If preview doesn't load on your device, tap Download.", cvModalDownload: "Download PDF",
+    numLabel: "By the numbers",
+    numClients: "clients across 5 years",
+    numGpa: "GPA at FTU",
+    numLangs: "languages I work in daily",
+    numCities: "cities I move between",
+    essayLabel: "A short note",
+    essayP1: "Most people in real estate either know the market or know technology. I ended up doing both, mostly by accident. The Taiwanese buyers I work with wanted help that didn't exist in Vietnamese — so I learned 中文. The CRM I needed didn't fit my workflow — so I built one. Five years later that's still how I operate: figure out what's missing, learn what I need, ship.",
+    essayP2: "I just finished my degree at Foreign Trade University. Now I'm looking for a place where someone who can talk to a 阿姨 in Taipei about her son's apartment, then write the code that tracks the deal, is actually useful. If that sounds like your team, write to me.",
+    doLabel: "What I do",
+    do1Title: "Sales",
+    do1Body: "Five years of property sales, mostly cross-border. Build the funnel myself: short-form video, Zalo follow-ups, viewings, deposit, paperwork. Comfortable with deal sizes from rentals to villas above twenty billion VND.",
+    do2Title: "Building things",
+    do2Body: "HTML, CSS, JavaScript, Tailwind. Firebase end-to-end — Hosting, Firestore, Auth, Cloud Functions. Light Node.js. I use AI tools (Gemini, Claude) as part of the workflow, not as a gimmick.",
+    do3Title: "Working across cultures",
+    do3Body: "Fluent in four languages, lived in both Vietnam and Taiwan. The unglamorous parts of cross-border work — explaining VN property law in 中文, navigating which bank gives loans to which passport — that's where I add the most value.",
+    workLabel: "Things I've shipped",
+    proj1Meta: "2025 — present · built solo",
+    proj1Body: "A real-estate site for my own business. Firebase Hosting, Firestore for listings, Cloud Functions to proxy Gemini for the AI chat (so users don't burn through a shared key), and a multi-language UI. Real production traffic from Vietnamese and Taiwanese buyers.",
+    proj1Link: "→ hoangsam-bds.web.app",
+    proj2Title: "A working sales funnel", proj2Meta: "2021 — present · 1,150+ clients",
+    proj2Body: "The unglamorous one. TikTok and Facebook content in the right language for each audience, Zalo qualification, in-person viewings, deposit and paperwork. Nothing here is automated end-to-end; the human steps are where the deals close.",
+    proj2Link: "→ ask me for the playbook",
+    proj3Title: "Internal CRM & AI workflows", proj3Meta: "2024 — present · daily use",
+    proj3Body: "Off-the-shelf CRMs didn't fit how cross-border deals actually move. So: a single-file CRM that runs offline, a Notion mirror for multi-device sync, and a small set of Gemini prompts I trust enough to use in front of real clients. Boring, but it works.",
+    proj4Title: "QC at Askey Computer", proj4Meta: "Taipei · earlier",
+    proj4Body: "Two years of quality control before the real-estate path. Tedious, useful — taught me to write things down, follow checklists, and treat a process like something you can edit.",
+    testimonial: "\"He's the only agent I know who can explain Vietnamese property law in 中文 without anything getting lost.\"",
+    testimonialAttr: "Taiwanese investor · 3 deals · 2024 — 2025",
+    closeTitle: "Want to talk?",
+    closeSub: "Email is fastest. The orb in the corner is an AI that's read this whole page — it can answer most recruiter questions in four languages while I'm asleep.",
+    btnTalk: "Write me an email",
+    footerSet: "Newsreader · Inter · JetBrains Mono",
+  },
+
+  vi: {
+    topUpdate: "Cập nhật tháng 5, 2026",
+    kicker: "Hồ sơ · Đang tìm việc",
+    heroLine1: "Bán", heroLine2: "nhà,", heroLine3: "viết", heroLine4: "code.",
+    heroSub: "Tôi là Marshall — 5 năm bán căn hộ và nhà phố cho khách Việt, Đài Loan, Hoa lục. Đồng thời tự build website và công cụ vận hành business. Đang tìm chương tiếp theo.",
+    photoCaption: "Đài Bắc, thu 2025",
+    dlFrom: "Từ", dlFromVal: "Sài Gòn, hiện đang làm việc ở Đài Bắc",
+    dlWork: "Hiện tại", dlWorkVal: "Operator sản xuất tại Unimicron (S1/Sy, đang thử việc). Môi giới BĐS độc lập song song tại Hoàng Sâm BĐS.",
+    dlLooking: "Đang tìm", dlLookingVal: "Một vị trí Sales / BD / GTM thật sự cần tiếng Việt, tiếng Hoa, và khả năng tự ship công cụ.",
+    dlLangs: "Ngôn ngữ", dlLangsVal: "Tiếng Việt · Tiếng Anh (IELTS) · 中文 (繁 & 简)",
+    dlEdu: "Học vấn", dlEduVal: "Đại học Ngoại Thương, HCMC — tốt nghiệp 2023, GPA 4.00. Bằng cử nhân thứ hai tại Đại học Minh Truyền 銘傳大學, Đài Bắc — tốt nghiệp 2025. Master tại Minh Truyền, đang tạm ngưng để tìm hướng đi phù hợp.",
+    dlContact: "Liên hệ",
+    btnCV: "Xem CV", dockCV: "Xem CV", cvModalTitle: "Curriculum Vitae", cvModalMeta: "Marshall Ng Hoang Huy · Tháng 5, 2026", cvModalNote: "Nếu preview không load được trên thiết bị, hãy tải xuống.", cvModalDownload: "Tải PDF",
+    numLabel: "Bằng con số",
+    numClients: "khách trong 5 năm",
+    numGpa: "GPA tại FTU",
+    numLangs: "ngôn ngữ dùng hàng ngày",
+    numCities: "thành phố di chuyển giữa",
+    essayLabel: "Vài dòng",
+    essayP1: "Hầu hết người trong BĐS hoặc biết thị trường, hoặc biết tech. Tôi vô tình rơi vào cả hai. Khách Đài Loan tôi tiếp cần hỗ trợ mà tiếng Việt không có — nên tôi học 中文. CRM tôi cần không vừa workflow — nên tôi tự build. 5 năm sau, đó vẫn là cách tôi vận hành: thấy thiếu gì, học cái cần, làm.",
+    essayP2: "Tôi vừa tốt nghiệp Đại học Ngoại Thương. Đang tìm nơi mà người biết nói chuyện với 阿姨 ở Đài Bắc về căn hộ con trai bà, rồi viết code track deal đó, thực sự có chỗ dùng. Nếu giống đội bạn — viết thư cho tôi.",
+    doLabel: "Tôi làm gì",
+    do1Title: "Bán hàng",
+    do1Body: "5 năm bán BĐS, chủ yếu xuyên biên giới. Tự build funnel: video ngắn, Zalo follow-up, dẫn xem nhà, đặt cọc, giấy tờ. Quen tay với deal từ thuê đến biệt thự trên 20 tỷ.",
+    do2Title: "Build công cụ",
+    do2Body: "HTML, CSS, JavaScript, Tailwind. Firebase end-to-end — Hosting, Firestore, Auth, Cloud Functions. Node.js cơ bản. Dùng AI (Gemini, Claude) như công cụ trong workflow, không phải để khoe.",
+    do3Title: "Làm việc đa văn hoá",
+    do3Body: "Trôi chảy 4 ngôn ngữ, sống ở cả Việt Nam và Đài Loan. Phần khó của BĐS xuyên biên giới — giải thích luật BĐS Việt Nam bằng 中文, biết bank nào cho vay khách nước nào — đó là chỗ tôi tạo giá trị nhất.",
+    workLabel: "Tôi đã làm",
+    proj1Meta: "2025 — nay · build solo",
+    proj1Body: "Site BĐS cho business riêng. Firebase Hosting, Firestore lưu listing, Cloud Functions proxy Gemini cho AI chat (để user không bị tốn quota chung), UI đa ngôn ngữ. Có traffic thực từ khách VN và Đài.",
+    proj1Link: "→ hoangsam-bds.web.app",
+    proj2Title: "Funnel bán hàng đang chạy", proj2Meta: "2021 — nay · 1,150+ khách",
+    proj2Body: "Phần ít hào nhoáng. Content TikTok và Facebook đúng ngôn ngữ từng audience, qualify qua Zalo, dẫn xem trực tiếp, đặt cọc, giấy tờ. Không có gì tự động hoá hoàn toàn ở đây — bước con người mới là nơi deal close.",
+    proj2Link: "→ hỏi tôi xin playbook",
+    proj3Title: "CRM nội bộ & workflow AI", proj3Meta: "2024 — nay · dùng hàng ngày",
+    proj3Body: "CRM thị trường không vừa cách deal xuyên biên giới thực sự diễn ra. Nên: CRM 1 file chạy offline, mirror sang Notion để sync đa thiết bị, và một set prompt Gemini tin được đủ để dùng trước mặt khách thật. Nhàm chán, nhưng hoạt động.",
+    proj4Title: "QC tại Askey Computer", proj4Meta: "Đài Bắc · trước đây",
+    proj4Body: "2 năm quality control trước khi vào BĐS. Tỉ mỉ, hữu ích — dạy tôi ghi chép cẩn thận, theo checklist, và coi process là thứ có thể edit được.",
+    testimonial: "\"Anh là môi giới duy nhất tôi biết giải thích được luật BĐS Việt Nam bằng 中文 mà không mất nghĩa.\"",
+    testimonialAttr: "Nhà đầu tư Đài Loan · 3 deal · 2024 — 2025",
+    closeTitle: "Muốn nói chuyện?",
+    closeSub: "Email là nhanh nhất. Quả cầu ở góc là AI — đã đọc hết trang này, trả lời câu hỏi recruiter phổ biến bằng 4 ngôn ngữ trong lúc tôi ngủ.",
+    btnTalk: "Gửi email cho tôi",
+    footerSet: "Newsreader · Inter · JetBrains Mono",
+  },
+
+  'zh-TW': {
+    topUpdate: "更新於 2026 年 5 月",
+    kicker: "履歷 · 開放求職",
+    heroLine1: "賣", heroLine2: "房子,", heroLine3: "寫", heroLine4: "程式.",
+    heroSub: "我是 Marshall — 五年來賣公寓和透天給越南.台灣和中國買家.同時自己打造支撐業務的網站和工具.正在尋找下個階段.",
+    photoCaption: "台北,2025 秋",
+    dlFrom: "來自", dlFromVal: "西貢,目前在台北工作",
+    dlWork: "目前", dlWorkVal: "Unimicron 生產線 operator (S1/Sy.試用期).同時兼任 Hoàng Sâm 房地產獨立經紀人.",
+    dlLooking: "尋找", dlLookingVal: "需要越語.中文.以及自行打造工具能力的 Sales / BD / GTM 職缺.",
+    dlLangs: "語言", dlLangsVal: "越南語 · 英語 (IELTS) · 中文 (繁 & 简)",
+    dlEdu: "學歷", dlEduVal: "外貿大學 (胡志明市) — 2023 畢業.GPA 4.00.銘傳大學 (台北) 第二個學士學位 — 2025 畢業.銘傳大學碩士在讀,目前暫停以尋找合適下一步.",
+    dlContact: "聯絡",
+    btnCV: "預覽 CV", dockCV: "預覽 CV", cvModalTitle: "履歷 (CV)", cvModalMeta: "Marshall Ng Hoang Huy · 2026 年 5 月", cvModalNote: "若預覽無法載入,請直接下載 PDF.", cvModalDownload: "下載 PDF",
+    numLabel: "數字會說話",
+    numClients: "客戶 · 五年累積",
+    numGpa: "FTU 平均成績",
+    numLangs: "每日使用的語言",
+    numCities: "輪駐城市",
+    essayLabel: "幾段自述",
+    essayP1: "房地產圈大部分人不是懂市場.就是懂技術.我意外地兩者都做.台灣買家想要的越南語裡找不到的協助 — 所以我學中文.我需要的 CRM 不符合工作流 — 所以自己寫.五年後我還是這樣做事:看見缺什麼.學需要的.動手做.",
+    essayP2: "我剛從外貿大學畢業.正在找一個能讓「能跟台北阿姨聊她兒子的公寓.又能寫程式追蹤這筆交易的人」真正派上用場的團隊.聽起來像你們 — 寫信給我.",
+    doLabel: "我做什麼",
+    do1Title: "業務",
+    do1Body: "五年房地產業務.主要是跨境.整套漏斗自己跑:短影音.Zalo 跟進.看屋.下定.文件.習慣從租屋到 200 億 VND 別墅各種規模.",
+    do2Title: "動手寫東西",
+    do2Body: "HTML.CSS.JavaScript.Tailwind.Firebase 全套 — Hosting.Firestore.Auth.Cloud Functions.Node.js 基本.AI 工具 (Gemini.Claude) 是工作流的一部分,不是噱頭.",
+    do3Title: "跨文化工作",
+    do3Body: "四語流利.在越南和台灣都住過.跨境工作中不浪漫的部分 — 用中文解釋越南房地產法律.了解哪間銀行給哪本護照貸款 — 那才是我加值最多的地方.",
+    workLabel: "我做過的事",
+    proj1Meta: "2025 — 至今 · 獨自打造",
+    proj1Body: "為自己事業做的房地產網站.Firebase Hosting.Firestore 存物件.Cloud Functions 代理 Gemini AI 聊天 (避免使用者用光共享金鑰).多語 UI.來自越南與台灣買家的真實流量.",
+    proj1Link: "→ hoangsam-bds.web.app",
+    proj2Title: "一個能跑的銷售漏斗", proj2Meta: "2021 — 至今 · 1,150+ 客戶",
+    proj2Body: "不浪漫的那部分.TikTok 和 Facebook 用各自目標客群的語言.Zalo 篩選.現場看屋.下定.文件.沒有什麼是端到端自動化的 — 成交都發生在人接觸的步驟.",
+    proj2Link: "→ 跟我要 playbook",
+    proj3Title: "內部 CRM 與 AI 工作流", proj3Meta: "2024 — 至今 · 每日使用",
+    proj3Body: "現成 CRM 不符合跨境交易實際運作.所以:一個離線單檔 CRM.同步到 Notion 多裝置使用.以及一組信任到能在客戶面前用的 Gemini 提示詞.無聊,但有效.",
+    proj4Title: "Askey 電腦 QC 工作", proj4Meta: "台北 · 較早",
+    proj4Body: "兩年品管.在房地產之前.繁瑣.有用 — 教會我寫東西要記下.照清單做事.把流程當成可以編輯的對象.",
+    testimonial: "「他是我認識唯一能用中文解釋越南房地產法律.內容不失真的經紀人.」",
+    testimonialAttr: "台灣投資人 · 3 筆成交 · 2024 — 2025",
+    closeTitle: "想聊聊嗎?",
+    closeSub: "電郵最快.角落還有個 AI 助理 — 已讀過這頁面所有四語內容.我睡覺時也能回答常見的招募問題.",
+    btnTalk: "寄電郵給我",
+    footerSet: "Newsreader · Inter · JetBrains Mono",
+  },
+
+  'zh-CN': {
+    topUpdate: "更新于 2026 年 5 月",
+    kicker: "履历 · 开放求职",
+    heroLine1: "卖", heroLine2: "房子,", heroLine3: "写", heroLine4: "代码.",
+    heroSub: "我是 Marshall — 五年来卖公寓和联排给越南、台湾和中国大陆买家。同时自己打造支撑业务的网站和工具。正在寻找下一阶段。",
+    photoCaption: "台北，2025 秋",
+    dlFrom: "来自", dlFromVal: "西贡，目前在台北工作",
+    dlWork: "目前", dlWorkVal: "Unimicron 生产线 operator (S1/Sy、试用期)。同时兼任 Hoàng Sâm 房地产独立经纪人。",
+    dlLooking: "寻找", dlLookingVal: "需要越语、中文，以及自行打造工具能力的 Sales / BD / GTM 职缺。",
+    dlLangs: "语言", dlLangsVal: "越南语 · 英语 (IELTS) · 中文 (繁 & 简)",
+    dlEdu: "学历", dlEduVal: "外贸大学 (胡志明市) — 2023 毕业、GPA 4.00。铭传大学 (台北) 第二个学士学位 — 2025 毕业。铭传大学硕士在读，目前暂停以寻找合适下一步。",
+    dlContact: "联系",
+    btnCV: "预览 CV", dockCV: "预览 CV", cvModalTitle: "履历 (CV)", cvModalMeta: "Marshall Ng Hoang Huy · 2026 年 5 月", cvModalNote: "若预览无法加载，请直接下载 PDF。", cvModalDownload: "下载 PDF",
+    numLabel: "数字说话",
+    numClients: "客户 · 五年累积",
+    numGpa: "FTU 平均成绩",
+    numLangs: "每日使用的语言",
+    numCities: "轮驻城市",
+    essayLabel: "几段自述",
+    essayP1: "房地产圈大部分人要么懂市场，要么懂技术。我意外地两者都做。台湾买家想要的越南语里找不到的协助 — 所以我学中文。我需要的 CRM 不符合工作流 — 所以自己写。五年后我还是这样做事：看见缺什么、学需要的、动手做。",
+    essayP2: "我刚从外贸大学毕业。正在找一个能让「能跟台北阿姨聊她儿子的公寓、又能写代码追踪这笔交易的人」真正派上用场的团队。听起来像你们 — 写信给我。",
+    doLabel: "我做什么",
+    do1Title: "业务",
+    do1Body: "五年房地产业务。主要是跨境。整套漏斗自己跑：短视频、Zalo 跟进、看房、下定、文件。习惯从租房到 200 亿 VND 别墅各种规模。",
+    do2Title: "动手写东西",
+    do2Body: "HTML、CSS、JavaScript、Tailwind。Firebase 全套 — Hosting、Firestore、Auth、Cloud Functions。Node.js 基本。AI 工具 (Gemini、Claude) 是工作流的一部分，不是噱头。",
+    do3Title: "跨文化工作",
+    do3Body: "四语流利。在越南和台湾都住过。跨境工作中不浪漫的部分 — 用中文解释越南房地产法律、了解哪家银行给哪本护照贷款 — 那才是我加值最多的地方。",
+    workLabel: "我做过的事",
+    proj1Meta: "2025 — 至今 · 独自打造",
+    proj1Body: "为自己事业做的房地产网站。Firebase Hosting、Firestore 存物件、Cloud Functions 代理 Gemini AI 聊天 (避免用户用光共享密钥)、多语 UI。来自越南与台湾买家的真实流量。",
+    proj1Link: "→ hoangsam-bds.web.app",
+    proj2Title: "一个能跑的销售漏斗", proj2Meta: "2021 — 至今 · 1,150+ 客户",
+    proj2Body: "不浪漫的那部分。TikTok 和 Facebook 用各自目标客群的语言。Zalo 筛选、现场看房、下定、文件。没有什么是端到端自动化的 — 成交都发生在人接触的步骤。",
+    proj2Link: "→ 跟我要 playbook",
+    proj3Title: "内部 CRM 与 AI 工作流", proj3Meta: "2024 — 至今 · 每日使用",
+    proj3Body: "现成 CRM 不符合跨境交易实际运作。所以：一个离线单文件 CRM、同步到 Notion 多设备使用、以及一组信任到能在客户面前用的 Gemini 提示词。无聊，但有效。",
+    proj4Title: "Askey 电脑 QC 工作", proj4Meta: "台北 · 较早",
+    proj4Body: "两年品管。在房地产之前。繁琐、有用 — 教会我写东西要记下、照清单做事、把流程当成可以编辑的对象。",
+    testimonial: "「他是我认识唯一能用中文解释越南房地产法律、内容不失真的经纪人。」",
+    testimonialAttr: "台湾投资人 · 3 笔成交 · 2024 — 2025",
+    closeTitle: "想聊聊吗?",
+    closeSub: "邮件最快。角落还有个 AI 助手 — 已读过这页面所有四语内容。我睡觉时也能回答常见的招聘问题。",
+    btnTalk: "给我发邮件",
+    footerSet: "Newsreader · Inter · JetBrains Mono",
+  }
+};
+
+function detectLang() {
+  const saved = localStorage.getItem('marshall-portfolio-lang');
+  if (saved && I18N[saved]) return saved;
+  const b = (navigator.language || 'en').toLowerCase();
+  if (b.startsWith('vi')) return 'vi';
+  if (b.startsWith('zh-tw') || b.startsWith('zh-hk')) return 'zh-TW';
+  if (b.startsWith('zh')) return 'zh-CN';
+  return 'en';
+}
+
+let currentLang = detectLang();
+
+function moveLangThumb() {
+  const active = document.querySelector('.lang-tab.active');
+  const thumb = document.getElementById('lang-thumb');
+  if (!active || !thumb) return;
+  // Account for the .lang-tabs container's 3px inner padding
+  thumb.style.width = active.offsetWidth + 'px';
+  thumb.style.setProperty('--thumb-x', active.offsetLeft + 'px');
+}
+
+function applyLang() {
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const txt = I18N[currentLang]?.[el.dataset.i18n];
+    if (txt) el.textContent = txt;
+  });
+  document.querySelectorAll('.lang-tab').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === currentLang);
+  });
+  // Wait one frame so the new tab text width is laid out before measuring
+  requestAnimationFrame(moveLangThumb);
+}
+
+document.querySelectorAll('.lang-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentLang = btn.dataset.lang;
+    localStorage.setItem('marshall-portfolio-lang', currentLang);
+    applyLang();
+  });
+});
+
+applyLang();
+// Keep the thumb aligned if the viewport resizes (CJK ↔ Latin width swap)
+window.addEventListener('resize', moveLangThumb);
+// One late tick — fonts often load slightly after applyLang, shifting widths
+window.addEventListener('load', () => setTimeout(moveLangThumb, 50));
+
+// ====================== COUNT-UP NUMBERS ======================
+// Ease-out quartic over ~1.8s. Each number animates once when its row
+// first scrolls into view. Falls back to instant value if IO missing.
+(function initCountUp() {
+  const targets = [
+    { el: document.querySelectorAll('.stat-num')[0], to: 1150, suffix: '+', decimals: 0 },
+    { el: document.querySelectorAll('.stat-num')[1], to: 4,    suffix: '.00', decimals: 0 },
+    { el: document.querySelectorAll('.stat-num')[2], to: 4,    suffix: '',    decimals: 0 },
+    { el: document.querySelectorAll('.stat-num')[3], to: 2,    suffix: '',    decimals: 0 },
+  ].filter(t => t.el);
+  if (!targets.length) return;
+  // Hide the final value while we wait — show "0" placeholder
+  targets.forEach(t => { t.el.dataset.final = t.el.innerHTML; t.el.textContent = '0'; });
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(t => { t.el.innerHTML = t.el.dataset.final; });
+    return;
+  }
+  const animate = (t) => {
+    const start = performance.now();
+    const dur = 1800;
+    const ease = (p) => 1 - Math.pow(1 - p, 4); // ease-out quartic — slow finish
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const val = t.to * ease(p);
+      const intStr = Math.floor(val).toLocaleString('en-US');
+      if (p < 1) {
+        t.el.textContent = intStr;
+        requestAnimationFrame(step);
+      } else {
+        // Restore the original HTML (preserves the muted suffix span)
+        t.el.innerHTML = t.el.dataset.final;
+      }
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const tgt = targets.find(t => t.el === e.target);
+        if (tgt) animate(tgt);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  targets.forEach(t => io.observe(t.el));
+})();
+
+// ESC closes CV modal
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('cv-modal');
+    if (modal && modal.classList.contains('cv-show')) {
+      modal.classList.remove('cv-show');
+      document.body.style.overflow = '';
+    }
+  }
+});
+</script>
+
+</body>
+</html>

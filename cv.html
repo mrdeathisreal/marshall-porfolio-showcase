@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Marshall Ng Hoang Huy — Curriculum Vitae</title>
+<meta name="description" content="Marshall Nguyen Hoang Huy — Business Graduate, AI-Powered Marketer, Cross-Cultural Operator. CV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crimson: #862633;
+    --crimson-light: #a83b4a;
+    --ink: #1a1a1a;
+    --ink-soft: #3a3a3a;
+    --mute: #6b6b6b;
+    --line: #d5d5d5;
+    --paper: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #f3f3f0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, "Noto Sans TC", "Noto Sans SC", sans-serif;
+    color: var(--ink);
+    font-size: 10.5pt;
+    line-height: 1.42;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  [lang^="zh"] { font-family: 'Inter', 'Noto Sans TC', 'Noto Sans SC', sans-serif; }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 18mm 16mm 16mm;
+    margin: 12px auto;
+    background: var(--paper);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    page-break-after: always;
+  }
+
+  /* HEADER */
+  .cv-head {
+    display: grid;
+    grid-template-columns: 1fr 110px;
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 14px;
+  }
+  .cv-name {
+    font-size: 28pt;
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .cv-name-zh {
+    font-size: 12pt;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+  .cv-title {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 2px solid var(--crimson);
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .cv-contact-line {
+    font-size: 9.5pt;
+    color: var(--ink);
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+  .cv-contact-line strong { font-weight: 600; }
+  .cv-contact-line a { color: var(--ink); text-decoration: underline; }
+  .cv-contact-line .accent { color: var(--crimson); font-weight: 600; }
+
+  .cv-photo {
+    width: 110px;
+    height: 130px;
+    object-fit: cover;
+    background: #e8e8e8;
+  }
+
+  /* SECTION HEADER */
+  h2 {
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--crimson);
+    margin: 14px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1.5px solid var(--crimson);
+  }
+  h2:first-of-type { margin-top: 8px; }
+
+  /* BODY TEXT */
+  p { margin-bottom: 6px; font-size: 10.5pt; }
+
+  ul { list-style: none; padding-left: 0; }
+  ul li { padding-left: 14px; position: relative; margin-bottom: 3px; font-size: 10pt; line-height: 1.45; }
+  ul li::before {
+    content: '•';
+    position: absolute; left: 2px; top: 0;
+    color: var(--ink-soft); font-weight: 700;
+  }
+
+  /* JOB BLOCK */
+  .exp {
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+  .exp-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+    margin-bottom: 3px;
+  }
+  .exp-title-line {
+    font-size: 10.5pt;
+    line-height: 1.35;
+  }
+  .exp-title-line strong {
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .exp-date {
+    font-size: 9.5pt;
+    color: var(--ink-soft);
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  /* SKILLS — DEFINITION TABLE */
+  .skills-table {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 4px 18px;
+  }
+  .skills-table dt {
+    font-weight: 700;
+    font-size: 10pt;
+    color: var(--ink);
+    padding: 4px 0;
+  }
+  .skills-table dd {
+    font-size: 10pt;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    padding: 4px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  .skills-table dt + dd { border-bottom: 1px dotted var(--line); }
+  .skills-table > *:nth-last-child(-n+2) { border-bottom: none; }
+
+  /* LANG BAR */
+  .lang-bar {
+    position: fixed; top: 12px; right: 12px; z-index: 10;
+    display: flex; gap: 4px; background: white;
+    padding: 6px 8px; border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+  }
+  .lang-bar button {
+    background: transparent; border: 1px solid transparent;
+    padding: 3px 8px; cursor: pointer;
+    color: var(--mute); border-radius: 4px;
+    font: inherit; font-weight: 500;
+  }
+  .lang-bar button.active { background: var(--ink); color: white; }
+  .print-btn {
+    background: var(--crimson) !important;
+    color: white !important;
+    border-color: var(--crimson) !important;
+    padding: 4px 12px !important;
+  }
+
+  /* PRINT */
+  @media print {
+    html, body { background: white; }
+    .page { box-shadow: none; margin: 0; padding: 18mm 16mm 16mm; }
+    .no-print { display: none !important; }
+    @page { size: A4; margin: 0; }
+    .exp, h2 { page-break-inside: avoid; }
+  }
+
+  @media (max-width: 880px) {
+    .page { width: 100%; padding: 8mm 6mm; }
+    .cv-head { grid-template-columns: 1fr; }
+    .cv-photo { width: 100px; height: 120px; order: -1; margin-bottom: 8px; }
+    .cv-name { font-size: 22pt; }
+    .skills-table { grid-template-columns: 100px 1fr; gap: 4px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-bar no-print">
+  <button data-lang="en" class="active">EN</button>
+  <button data-lang="vi">VI</button>
+  <button data-lang="zh-TW">繁中</button>
+  <button data-lang="zh-CN">简中</button>
+  <button onclick="window.print()" class="print-btn">⌘P · Save PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="cv-head">
+    <div>
+      <div class="cv-name">MARSHALL NG HOANG HUY</div>
+      <div class="cv-name-zh">阮煌輝 · Nguyen Hoang Huy</div>
+      <div class="cv-title" data-i18n="tagline">Business Graduate · AI-Powered Marketer · Cross-Cultural Operator</div>
+      <div class="cv-contact-line">
+        <strong data-i18n="cEmail">Email:</strong> <a href="mailto:nhhuy130@gmail.com">nhhuy130@gmail.com</a> &nbsp;|&nbsp;
+        <strong data-i18n="cPhone">Phone:</strong> +886 971 718 343 &nbsp;|&nbsp;
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/marshall-ng-64a157381/" target="_blank">marshall-ng</a>
+      </div>
+      <div class="cv-contact-line">
+        <strong data-i18n="cLocation">Location:</strong> <span data-i18n="locVal">Taipei, Taiwan</span> &nbsp;|&nbsp;
+        <strong data-i18n="cNat">Nationality:</strong> <span data-i18n="natVal">Vietnamese</span> &nbsp;|&nbsp;
+        <strong data-i18n="cAvail">Availability:</strong> <span class="accent" data-i18n="availVal">Immediate</span>
+      </div>
+      <div class="cv-contact-line" style="font-size: 9pt; color: var(--mute);">
+        <strong>Zalo:</strong> 0909 326 188 &nbsp;|&nbsp;
+        <strong>LINE:</strong> marshallmarshall1308 &nbsp;|&nbsp;
+        <strong>GitHub:</strong> <a href="https://github.com/mrdeathisreal" target="_blank">mrdeathisreal</a>
+      </div>
+    </div>
+    <img class="cv-photo" src="marshall.jpg" alt="Marshall Ng Hoang Huy"
+         onerror="this.style.background='#862633'; this.style.color='white'; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.style.fontSize='48px'; this.style.fontWeight='800'; this.alt='M.'; this.outerHTML=this.outerHTML.replace('<img','<div').replace('/>','>M.</div>')">
+  </div>
+
+  <!-- PROFILE -->
+  <h2 data-i18n="hProfile">Profile</h2>
+  <p data-i18n="profile">Four-language operator working both sides of the Vietnam–Taiwan corridor. B.S. International Business & Marketing from Ming Chuan University (GPA 4.00). Five years running a Vietnamese-market real-estate channel — 1,150+ clients across Facebook, Instagram, Threads and Line, with zero paid ads. AI tools (ChatGPT, Gemini, Claude, NotebookLM) sit in the daily workflow, not as a gimmick — lead qualification, bilingual drafting, market research. Currently doing my Taiwan-side bridge role at Unimicron (PCB ODM, Taoyuan) while looking for the right Sales / BD / GTM seat.</p>
+
+  <!-- HIGHLIGHTS -->
+  <h2 data-i18n="hHighlights">Highlights</h2>
+  <ul>
+    <li data-i18n="hl2"><strong>1,150+ clients</strong> built and managed solo over 5 years — Instagram, Line, Messenger, Threads. Referral-driven, zero ad spend.</li>
+    <li data-i18n="hl3"><strong>Four languages, two markets</strong> — Vietnamese (native), English (IELTS, preparing PTE C1), Mandarin (working, 繁 & 简). Lived in HCMC and Taipei; comfortable in both buyer cultures.</li>
+    <li data-i18n="hl4"><strong>GPA 4.00</strong> — B.S. International Business & Marketing, Ming Chuan University. Graduation research: 480-respondent Vietnam–Taiwan e-commerce-trust survey, regression + cluster analysis.</li>
+  </ul>
+
+  <!-- EXPERIENCE -->
+  <h2 data-i18n="hExp">Experience</h2>
+
+  <div class="exp">
+    <div class="exp-head">
+      <div class="exp-title-line">
+        <strong data-i18n="e0Title">Production Operator (Probation)</strong> — <span data-i18n="e0Org">Unimicron Technology Corp., Guishan, Taoyuan, Taiwan</span>
+      </div>
+      <div class="exp-date" data-i18n="e0Date">May 2026 – Present</div>
+    </div>
+    <ul>
+      <li data-i18n="e0b1">PCB production operator on S1/Sy line, 3-month probation. Bridge role while pursuing the right Sales / BD / GTM seat.</li>
+    </ul>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head">
+      <div class="exp-title-line">
+        <strong data-i18n="e1Title">Real Estate Sales Associate (family business)</strong> — <span data-i18n="e1Org">Independent Real Estate, HCMC, Vietnam</span>
+      </div>
+      <div class="exp-date" data-i18n="e1Date">2020 – Present</div>
+    </div>
+    <ul>
+      <li data-i18n="e1b1"><strong>1,150+ client database, zero paid ads</strong> — built and managed solo across Instagram, Line, Messenger, Threads. Full funnel: lead gen → qualification → CRM → close. Referrals are the dominant source.</li>
+      <li data-i18n="e1b2">Age-segmented content across four channels — Facebook Groups for older trust-driven buyers, Instagram for peers, Threads as teaser, Line/Messenger for one-to-one close. One listing, three narratives.</li>
+      <li data-i18n="e1b3">Run AI assistants (ChatGPT, Gemini, NotebookLM) for lead scoring, competing-listing summaries and bilingual replies — cuts response time, raises reply-to-viewing rate.</li>
+      <li data-i18n="e1b4">Live portfolio of 5–10 residential properties across HCMC Districts 6, 8 and Bình Chánh — Sổ hồng riêng and Vi bằng titles. Bilingual VN/EN negotiations and paperwork alongside the senior agent.</li>
+    </ul>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head">
+      <div class="exp-title-line">
+        <strong data-i18n="e2Title">Quality Control Operator (Part-time)</strong> — <span data-i18n="e2Org">Askey Computer Corp. (ODM), Taipei, Taiwan</span>
+      </div>
+      <div class="exp-date" data-i18n="e2Date">Oct – Dec 2025</div>
+    </div>
+    <ul>
+      <li data-i18n="e2b1">In-line QC on the document-scanner assembly line — SOP-driven functional and visual inspections for an ODM serving global electronics brands.</li>
+      <li data-i18n="e2b2">Logged defects, escalated root-cause issues to line engineers, owned daily output reports and shift hand-off.</li>
+    </ul>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head">
+      <div class="exp-title-line">
+        <strong data-i18n="e3Title">Inventory & Purchasing Assistant</strong> — <span data-i18n="e3Org">INDEX — VNEX, Taipei, Taiwan</span>
+      </div>
+      <div class="exp-date" data-i18n="e3Date">Jun 2024 – Sept 2025</div>
+    </div>
+    <ul>
+      <li data-i18n="e3b1">Owned end-to-end stock on the SMEPOS platform — goods receipts, returns, reconciliation and supplier coordination across multiple SKU lines.</li>
+      <li data-i18n="e3b2">Ran customer hotline support and Line ID gift-program; tuned re-order points to reduce holding cost and out-of-stock events.</li>
+    </ul>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head">
+      <div class="exp-title-line">
+        <strong data-i18n="e4Title">Toy Section Supervisor & Stall Manager</strong> — <span data-i18n="e4Org">Shilin Night Market — 套圈圈, Taipei</span>
+      </div>
+      <div class="exp-date" data-i18n="e4Date">Dec 2024 – May 2025</div>
+    </div>
+    <ul>
+      <li data-i18n="e4b1">Ran the toy section on one of Taipei's busiest night markets: merchandising, pricing, daily inventory and restocking; coached part-time staff and grew average ticket size on peak weekends.</li>
+    </ul>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head">
+      <div class="exp-title-line">
+        <strong data-i18n="e5Title">Marketing Intern</strong> — <span data-i18n="e5Org">Waterson Corp., Taipei, Taiwan</span>
+      </div>
+      <div class="exp-date" data-i18n="e5Date">Oct 2023 – May 2024</div>
+    </div>
+    <ul>
+      <li data-i18n="e5b1">Prospected B2B leads across Yelp, Google Business, Facebook and TikTok; used AI assistants to filter and qualify prospects before hand-off to sales.</li>
+      <li data-i18n="e5b2">Ran outreach via HubSpot CRM and Gmail; produced Canva / PowerPoint content briefs and competitive research to inform social strategy.</li>
+    </ul>
+  </div>
+
+  <!-- EDUCATION -->
+  <h2 data-i18n="hEdu">Education</h2>
+
+  <div class="exp">
+    <div class="exp-head">
+      <div class="exp-title-line">
+        <strong data-i18n="ed1Title">Master of Business Administration (temporarily on pause)</strong> — <span data-i18n="ed1Org">Ming Chuan University, Taipei</span>
+      </div>
+      <div class="exp-date" data-i18n="ed1Date">Sept 2025 – Feb 2026</div>
+    </div>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head">
+      <div class="exp-title-line">
+        <strong data-i18n="ed2Title">Bachelor of Science — International Business and Trade</strong> — <span data-i18n="ed2Org">Ming Chuan University, Taipei</span>
+      </div>
+      <div class="exp-date" data-i18n="ed2Date">Sept 2023 – Jun 2025</div>
+    </div>
+    <ul>
+      <li data-i18n="ed2b1">GPA 4.00/4.00 • International Business & Marketing Concentration Certificate (Jul 2025).</li>
+      <li data-i18n="ed2b2">Graduation Project — data-driven cross-cultural study: designed and executed a 480-respondent Vietnam–Taiwan e-commerce-trust survey; applied regression and cluster analysis to segment buyer behaviour and isolate trust drivers across markets.</li>
+    </ul>
+  </div>
+
+  <div class="exp">
+    <div class="exp-head">
+      <div class="exp-title-line">
+        <strong data-i18n="ed3Title">Foreign Trade University, HCMC Campus (transfer)</strong> — <span data-i18n="ed3Org">Ho Chi Minh City, Vietnam</span>
+      </div>
+      <div class="exp-date" data-i18n="ed3Date">Oct 2021 – Aug 2023</div>
+    </div>
+    <ul>
+      <li data-i18n="ed3b1">Average 3.7–3.8 / 4.0 • Completed Mandarin I–IV • Credits transferred into Ming Chuan University.</li>
+    </ul>
+  </div>
+
+  <!-- SKILLS -->
+  <h2 data-i18n="hSkills">Skills</h2>
+  <dl class="skills-table">
+    <dt data-i18n="skAI">AI-First Workflow</dt>
+    <dd data-i18n="skAIVal">Daily operator of ChatGPT, Gemini, Claude and NotebookLM for lead qualification, competitive market research, summarization of long documents and bilingual drafting. Rapid prototyping with Stitch AI (UI) and Blackbox AI (code). Custom prompt playbooks for sales outreach and buyer segmentation.</dd>
+
+    <dt data-i18n="skSocial">Social Commerce</dt>
+    <dd data-i18n="skSocialVal">Facebook, Facebook Groups, Instagram, Threads — age-segmented content strategy; Messenger, Zalo, Line 1-on-1 follow-up playbooks; referral-driven, zero-ad-spend pipeline.</dd>
+
+    <dt data-i18n="skMkt">Marketing & Sales</dt>
+    <dd data-i18n="skMktVal">Digital marketing, integrated marketing communication, HubSpot CRM, Gmail outreach, B2B lead prospecting via Yelp and Google Business, CRM hygiene and funnel reporting.</dd>
+
+    <dt data-i18n="skData">Data & Analytics</dt>
+    <dd data-i18n="skDataVal">Survey design, regression and cluster analysis (480-sample graduation study); advanced Microsoft Excel, Google Workspace, Asana; Canva and PowerPoint for visual storytelling.</dd>
+
+    <dt data-i18n="skOps">Operations & QC</dt>
+    <dd data-i18n="skOpsVal">Inventory management (SMEPOS), purchasing, supplier coordination, night-market retail management, in-line QC inspection and defect logging (Askey ODM scanner line; currently Unimicron PCB line).</dd>
+
+    <dt data-i18n="skLang">Languages</dt>
+    <dd data-i18n="skLangVal">Vietnamese (native); English (IELTS 5.5 / B2 — preparing PTE for C1); Mandarin Chinese (working — Chinese I–IV at FTU + Basic / Intermediate Mandarin at MCU, continuing).</dd>
+
+    <dt data-i18n="skLearn">Currently Learning</dt>
+    <dd data-i18n="skLearnVal">PTE (English C1) · continuing Mandarin · early-stage machine learning and web/mobile-app design.</dd>
+  </dl>
+
+</div>
+
+<script>
+const I18N = {
+  en: {}, // default — uses values in HTML
+  vi: {
+    tagline: "Cử nhân Kinh tế · Marketer dùng AI · Vận hành xuyên văn hoá",
+    cEmail: "Email:", cPhone: "ĐT:", cLocation: "Vị trí:", cNat: "Quốc tịch:", cAvail: "Sẵn sàng:",
+    locVal: "Đài Bắc, Đài Loan", natVal: "Việt Nam", availVal: "Ngay lập tức",
+    hProfile: "Hồ sơ",
+    profile: "Vận hành viên xuyên văn hoá kết nối thị trường tăng trưởng Việt Nam với môi trường kinh doanh Đài Loan. Cử nhân Kinh doanh Quốc tế & Marketing (B.S., GPA 4.00/4.00, ĐH Minh Truyền) với 5 năm độc lập vận hành kênh bán BĐS thị trường Việt — 1.150+ liên hệ qua Facebook, Instagram, Threads và Facebook Groups. Đã thích nghi với kỷ luật công sở Đài Loan qua các vai trò thực tế: operator sản xuất thử việc tại Unimicron Technology Corp. (PCB ODM, Đào Viên, 5/2026 – nay), QC tại Askey Computer Corp. (ODM, 10–12/2025) và quản lý bán hàng tại chợ đêm Sĩ Lâm. Workflow AI hàng ngày — ChatGPT, Gemini, Claude, NotebookLM, Stitch AI và Blackbox AI — cho qualify lead, nghiên cứu thị trường và prototype nhanh. Ba thứ tiếng: Việt (mẹ đẻ), Anh (IELTS 5.5, đang ôn PTE lên C1), Hoa (làm việc được).",
+    hHighlights: "Điểm nổi bật",
+    hl1: "AI-first workflow như hệ điều hành hàng ngày — ChatGPT, Gemini, Claude và NotebookLM cho lọc/qualify lead, nghiên cứu thị trường và tóm tắt; Stitch AI và Blackbox AI cho prototype thiết kế và code nhanh.",
+    hl2: "Tự build và quản lý database 1,150+ khách đa kênh (1,000+ Instagram, 150+ Line / Messenger) qua 5 năm bán BĐS Việt Nam — không chạy ads, pipeline từ giới thiệu.",
+    hl3: "Vận hành xuyên văn hoá — 5 năm kết nối social-commerce Việt với kỷ luật công sở Đài (operator tại Unimicron Đào Viên, QC tại Askey ODM, retail SOP tại chợ đêm Sĩ Lâm).",
+    hl4: "GPA 4.00/4.00 — B.S. Kinh doanh Quốc tế & Marketing, ĐH Minh Truyền (6/2025); luận văn: khảo sát 480 mẫu Việt–Đài về niềm tin e-commerce dùng phân tích hồi quy và cluster.",
+    hExp: "Kinh nghiệm",
+    e0Title: "Operator sản xuất (Thử việc)", e0Org: "Unimicron Technology Corp., Quy Sơn, Đào Viên, Đài Loan", e0Date: "5/2026 – nay",
+    e0b1: "Dây chuyền S1/Sy — operator máy trong sản xuất PCB, đang thử việc 3 tháng.",
+    e0b2: "Vai trò cầu nối có chủ ý trong khi tìm vị trí Sales / BD / GTM phù hợp — giữ tôi ở Đài Loan, ngôn ngữ luôn dùng, hỗ trợ quá trình tìm việc.",
+    e0b3: "Tận dụng kỷ luật QC trước đó từ Askey ODM.",
+    e1Title: "Môi giới BĐS (kinh doanh gia đình)", e1Org: "Môi giới Độc lập, HCMC, Việt Nam", e1Date: "2020 – nay",
+    e1b1: "Tự build và quản lý database 1,150+ khách đa kênh (1,000+ Instagram, 150+ Line / Messenger) trong 5+ năm — sở hữu toàn bộ funnel từ lead gen, qualify, CRM đến follow-up và chốt — không chạy ads.",
+    e1b2: "Chiến lược content phân theo độ tuổi qua 4 kênh: Facebook Groups cho khách trung niên trust-driven, Instagram cho người cùng tuổi và trẻ hơn ~10 tuổi, Threads top-of-funnel teaser, Messenger / Line cho conversion 1-1 — biến 1 tin BĐS thành 3 narrative tailored.",
+    e1b3: "Dùng AI (ChatGPT, Gemini, NotebookLM) để score và qualify inbound, tóm tắt tin BĐS cạnh tranh, soạn reply song ngữ ở scale — giảm thời gian phản hồi và tăng tỷ lệ reply → xem nhà.",
+    e1b4: "Sở hữu portfolio sống 5–10 căn nhà ở Quận 6, 8 và Bình Chánh — Sổ hồng riêng và Vi bằng; đàm phán song ngữ (Việt/Anh), dẫn xem và làm giấy tờ cùng môi giới chính. Giới thiệu là nguồn lead lớn nhất.",
+    e2Title: "QC Operator (Part-time)", e2Org: "Askey Computer Corp. (ODM), Đài Bắc, Đài Loan", e2Date: "10–12/2025",
+    e2b1: "QC in-line trên dây chuyền lắp ráp máy scanner tài liệu tại Askey — ODM cho thương hiệu điện tử toàn cầu — chạy kiểm tra functional và visual theo SOP.",
+    e2b2: "Log lỗi và escalate root-cause cho line engineer; duy trì daily output report và kỷ luật hand-off ca.",
+    e2b3: "Tiếp xúc trực tiếp với lean-manufacturing Đài Loan: QC gating, hand-off operator–engineer và reconcile cuối ca.",
+    e3Title: "Trợ lý Kho & Mua hàng", e3Org: "INDEX — VNEX, Đài Bắc, Đài Loan", e3Date: "6/2024 – 9/2025",
+    e3b1: "Sở hữu end-to-end stock trên platform SMEPOS — nhập hàng, trả hàng, đối chiếu và phối hợp nhà cung cấp qua nhiều SKU.",
+    e3b2: "Hỗ trợ hotline khách hàng và chương trình quà LINE ID; tune lại re-order point để giảm chi phí lưu kho và hết hàng.",
+    e4Title: "Quản lý Quầy Đồ chơi", e4Org: "Chợ đêm Sĩ Lâm — 套圈圈, Đài Bắc", e4Date: "12/2024 – 5/2025",
+    e4b1: "Vận hành quầy đồ chơi tại 1 trong những chợ đêm đông nhất Đài Bắc: merchandising, định giá, kiểm kê hàng ngày và nhập hàng; coach part-time và tăng average ticket cuối tuần cao điểm.",
+    e5Title: "Thực tập Marketing", e5Org: "Waterson Corp., Đài Bắc, Đài Loan", e5Date: "10/2023 – 5/2024",
+    e5b1: "Prospect lead B2B qua Yelp, Google Business, Facebook và TikTok; dùng AI assistant để lọc và qualify prospect trước khi hand-off cho sales.",
+    e5b2: "Outreach qua HubSpot CRM và Gmail; làm content brief Canva / PowerPoint và nghiên cứu cạnh tranh để inform social strategy.",
+    hEdu: "Học vấn",
+    ed1Title: "Thạc sĩ Quản trị Kinh doanh (đang tạm ngưng)", ed1Org: "ĐH Minh Truyền, Đài Bắc", ed1Date: "9/2025 – 2/2026",
+    ed1b1: "Tạm ngưng để ưu tiên cơ hội nghề toàn thời gian — cam kết đào sâu kinh nghiệm vận hành thực tế trước, kế hoạch rõ ràng để tiếp tục cao học khi nền tảng nghề ổn.",
+    ed2Title: "Cử nhân Kinh doanh Quốc tế & Thương mại", ed2Org: "ĐH Minh Truyền, Đài Bắc", ed2Date: "9/2023 – 6/2025",
+    ed2b1: "GPA 4.00/4.00 • Chứng chỉ Concentration Kinh doanh Quốc tế & Marketing (7/2025).",
+    ed2b2: "Luận văn — nghiên cứu cross-cultural dùng dữ liệu: thiết kế và thực hiện khảo sát 480 mẫu Việt–Đài về niềm tin e-commerce; áp dụng phân tích hồi quy và cluster để phân khúc hành vi mua và xác định trust driver.",
+    ed3Title: "ĐH Ngoại Thương, cơ sở HCMC (chuyển trường)", ed3Org: "TP. HCM, Việt Nam", ed3Date: "10/2021 – 8/2023",
+    ed3b1: "GPA trung bình 3.7–3.8/4.0 • Hoàn thành Tiếng Hoa I–IV • Tín chỉ đã chuyển sang ĐH Minh Truyền.",
+    hSkills: "Kỹ năng",
+    skAI: "Workflow AI", skAIVal: "Vận hành hàng ngày ChatGPT, Gemini, Claude và NotebookLM cho qualify lead, nghiên cứu cạnh tranh, tóm tắt tài liệu dài và soạn song ngữ. Prototype nhanh với Stitch AI (UI) và Blackbox AI (code). Playbook prompt riêng cho outreach và phân khúc buyer.",
+    skSocial: "Social Commerce", skSocialVal: "Facebook, Facebook Groups, Instagram, Threads — content strategy phân tuổi; Messenger, Zalo, Line follow-up 1-1; pipeline từ giới thiệu, không ads.",
+    skMkt: "Marketing & Sales", skMktVal: "Digital marketing, integrated marketing communication, HubSpot CRM, outreach Gmail, prospect lead B2B qua Yelp và Google Business, CRM hygiene và funnel reporting.",
+    skData: "Dữ liệu & Phân tích", skDataVal: "Thiết kế khảo sát, phân tích hồi quy và cluster (luận văn 480 mẫu); Microsoft Excel nâng cao, Google Workspace, Asana; Canva và PowerPoint cho storytelling.",
+    skOps: "Vận hành & QC", skOpsVal: "Quản lý kho (SMEPOS), purchasing, phối hợp nhà cung cấp, retail chợ đêm, in-line QC và log defect (Askey ODM scanner line; hiện tại Unimicron PCB line).",
+    skLang: "Ngôn ngữ", skLangVal: "Tiếng Việt (mẹ đẻ); Tiếng Anh (IELTS 5.5 / B2 — đang ôn PTE lên C1); Tiếng Hoa (làm việc được — Hoa I–IV tại FTU + Hoa Cơ bản/Trung cấp tại MCU, đang tiếp tục).",
+    skLearn: "Đang học thêm", skLearnVal: "PTE (Anh C1); Hoa tiếp tục; bước đầu vào machine learning, thiết kế 3D và web / mobile-app design. Mục tiêu gần: marketer hiểu data hôm nay; hybrid data-and-design trong 2 năm.",
+  },
+  'zh-TW': {
+    tagline: "商學畢業 · AI 驅動行銷 · 跨文化 Operator",
+    cEmail: "Email:", cPhone: "電話:", cLocation: "位置:", cNat: "國籍:", cAvail: "可入職:",
+    locVal: "台北,台灣", natVal: "越南", availVal: "立即",
+    hProfile: "簡介",
+    profile: "跨文化 Operator,連接越南成長市場與台灣商業環境.國際企業與行銷學士 (B.S..GPA 4.00/4.00.銘傳大學),五年來獨立運營越南房地產社群銷售管道 — Facebook.Instagram.Threads 和 Facebook Groups 共 1,150+ 客戶.透過實際職位適應台灣職場紀律:Unimicron 生產線 operator 試用期 (PCB ODM.桃園.2026 年 5 月 – 至今).Askey 電腦 in-line QC (ODM.2025 年 10–12 月) 與士林夜市攤位管理.AI-first 日常工作流 — ChatGPT.Gemini.Claude.NotebookLM.Stitch AI 與 Blackbox AI — 用於客戶篩選.市場研究與快速原型.三語:越南語母語.英語 IELTS 5.5 (準備 PTE C1).中文工作.",
+    hHighlights: "亮點",
+    hl1: "AI-first 工作流作為日常作業系統 — ChatGPT.Gemini.Claude 與 NotebookLM 用於客戶過濾與篩選.競爭市場研究與摘要;Stitch AI 與 Blackbox AI 用於快速設計與程式原型.",
+    hl2: "獨立建立並管理 1,150+ 多通路客戶資料庫 (1,000+ Instagram.150+ Line / Messenger) — 5 年越南社群銷售經驗,零付費廣告.推薦驅動的客戶來源.",
+    hl3: "跨文化 Operator — 五年連接越南社群商業文化與台灣結構化職場 (桃園 Unimicron operator.Askey ODM QC 線紀律.士林夜市 SOP 零售).",
+    hl4: "GPA 4.00/4.00 — 銘傳大學國際企業與行銷學士 (2025 年 6 月);畢業論文:480 樣本越南–台灣電商信任研究,使用迴歸與群集分析.",
+    hExp: "經歷",
+    e0Title: "生產線 Operator (試用期)", e0Org: "Unimicron 欣興電子,桃園市龜山區,台灣", e0Date: "2026 年 5 月 – 至今",
+    e0b1: "S1/Sy 生產線 — PCB 相關製程機台 operator,三個月試用期.",
+    e0b2: "是有意安排的過渡角色,在找尋合適 Sales / BD / GTM 職位的同時 — 讓我留在台灣.保持語言新鮮.支持求職.",
+    e0b3: "建立在 Askey ODM 既有 QC 線紀律之上.",
+    e1Title: "房地產業務 (家族事業)", e1Org: "獨立房地產,胡志明市,越南", e1Date: "2020 – 至今",
+    e1b1: "5+ 年獨立建立並管理 1,150+ 多通路客戶資料庫 (1,000+ Instagram.150+ Line / Messenger) — 完整掌握漏斗:潛客.篩選.CRM 到跟進與成交 — 零付費廣告.",
+    e1b2: "依年齡分群跨 4 個通路執行內容策略:Facebook Groups 給中年信任型買家.Instagram 給同齡與年輕約 10 歲買家.Threads 漏斗上層誘導.Messenger / Line 一對一轉換 — 同一個房源拆成三種敘事.",
+    e1b3: "使用 AI 工具 (ChatGPT.Gemini.NotebookLM) 為來訊評分篩選.摘要競品房源.大規模撰寫雙語回覆 — 縮短回應時間提升回覆到看屋的轉換率.",
+    e1b4: "持有 5–10 個胡志明市 6 區.8 區與 Bình Chánh 的住宅組合 — Sổ hồng riêng 與 Vi bằng 產權;雙語 (越/英) 議價.看屋與合約文件配合資深經紀人.推薦是最大的客源.",
+    e2Title: "品管 Operator (兼職)", e2Org: "Askey 電腦 (ODM),台北,台灣", e2Date: "2025 年 10–12 月",
+    e2b1: "在 Askey 電腦掃描器組裝線執行 in-line QC — 全球電子品牌的 ODM — 依 SOP 執行功能與外觀檢驗.",
+    e2b2: "記錄缺陷並向線上工程師升級根因問題;維持每日產出報告與班次交接紀律.",
+    e2b3: "親身體驗台灣精實製造:QC 把關.operator–工程師交接與班末對帳.",
+    e3Title: "庫存與採購助理", e3Org: "INDEX — VNEX,台北,台灣", e3Date: "2024 年 6 月 – 2025 年 9 月",
+    e3b1: "在 SMEPOS 平台上端到端管理庫存 — 進貨.退貨.對帳與跨多個 SKU 線的供應商協調.",
+    e3b2: "執行客服熱線與 LINE ID 贈品計畫;調整再訂購點以降低持有成本與缺貨事件.",
+    e4Title: "玩具區主管與攤位經理", e4Org: "士林夜市 — 套圈圈,台北", e4Date: "2024 年 12 月 – 2025 年 5 月",
+    e4b1: "經營台北最熱鬧夜市之一的玩具區:商品陳列.定價.每日盤點與補貨;指導兼職員工並在週末高峰提高平均客單價.",
+    e5Title: "行銷實習", e5Org: "Waterson Corp.,台北,台灣", e5Date: "2023 年 10 月 – 2024 年 5 月",
+    e5b1: "從 Yelp.Google Business.Facebook 與 TikTok 開發 B2B 潛客;使用 AI 助理過濾與篩選潛客後交給銷售.",
+    e5b2: "透過 HubSpot CRM 與 Gmail 進行外展;製作 Canva / PowerPoint 內容簡報與競爭研究以指導社群策略.",
+    hEdu: "學歷",
+    ed1Title: "工商管理碩士 (暫時休學)", ed1Org: "銘傳大學,台北", ed1Date: "2025 年 9 月 – 2026 年 2 月",
+    ed1b1: "暫停修讀以優先投入全職職涯機會 — 致力於先深化真實營運經驗,有明確計畫在職涯基礎確立後繼續研究所學業.",
+    ed2Title: "理學士 — 國際企業與貿易", ed2Org: "銘傳大學,台北", ed2Date: "2023 年 9 月 – 2025 年 6 月",
+    ed2b1: "GPA 4.00/4.00 • 國際企業與行銷專業證書 (2025 年 7 月).",
+    ed2b2: "畢業專題 — 數據驅動跨文化研究:設計並執行 480 受訪者越南–台灣電商信任調查;運用迴歸與群集分析分群買家行為並找出信任驅動因素.",
+    ed3Title: "外貿大學,胡志明市校區 (轉學)", ed3Org: "胡志明市,越南", ed3Date: "2021 年 10 月 – 2023 年 8 月",
+    ed3b1: "平均 3.7–3.8 / 4.0 • 完成中文 I–IV • 學分轉入銘傳大學.",
+    hSkills: "技能",
+    skAI: "AI 工作流", skAIVal: "每天使用 ChatGPT.Gemini.Claude 和 NotebookLM 進行客戶篩選.競爭市場研究.長文件摘要與雙語撰寫.使用 Stitch AI (UI) 和 Blackbox AI (code) 快速原型.自製業務外展與買家分群的提示詞 playbook.",
+    skSocial: "社群電商", skSocialVal: "Facebook.Facebook Groups.Instagram.Threads — 年齡分群內容策略;Messenger.Zalo.Line 一對一跟進 playbook;推薦驅動.零廣告預算管道.",
+    skMkt: "行銷與業務", skMktVal: "數位行銷.整合行銷傳播.HubSpot CRM.Gmail 外展.透過 Yelp 和 Google Business 開發 B2B 潛客.CRM 衛生與漏斗報告.",
+    skData: "資料與分析", skDataVal: "問卷設計.迴歸與群集分析 (480 樣本畢業研究);進階 Microsoft Excel.Google Workspace.Asana;Canva 和 PowerPoint 視覺敘事.",
+    skOps: "營運與品管", skOpsVal: "庫存管理 (SMEPOS).採購.供應商協調.夜市零售管理.in-line QC 檢驗與缺陷記錄 (Askey ODM 掃描器線;目前 Unimicron PCB 線).",
+    skLang: "語言", skLangVal: "越南語 (母語);英語 (IELTS 5.5 / B2 — 準備 PTE C1);中文 (工作 — FTU 中文 I–IV + MCU 基礎/中級中文,持續).",
+    skLearn: "目前學習", skLearnVal: "PTE (英語 C1);中文持續;首次接觸機器學習.3D 設計與 web / 行動 app 設計.近期目標:今天是懂資料的行銷人;兩年內成為資料與設計兼具的混合型人才.",
+  },
+  'zh-CN': {
+    tagline: "商学毕业 · AI 驱动营销 · 跨文化 Operator",
+    cEmail: "Email:", cPhone: "电话:", cLocation: "位置:", cNat: "国籍:", cAvail: "可入职:",
+    locVal: "台北，台湾", natVal: "越南", availVal: "立即",
+    hProfile: "简介",
+    profile: "跨文化 Operator，连接越南成长市场与台湾商业环境。国际企业与营销学士 (B.S.，GPA 4.00/4.00，铭传大学)，五年来独立运营越南房地产社群销售管道 — Facebook、Instagram、Threads 和 Facebook Groups 共 1,150+ 客户。通过实际职位适应台湾职场纪律：Unimicron 生产线 operator 试用期 (PCB ODM，桃园，2026 年 5 月 – 至今)、Askey 电脑 in-line QC (ODM，2025 年 10–12 月) 与士林夜市摊位管理。AI-first 日常工作流 — ChatGPT、Gemini、Claude、NotebookLM、Stitch AI 与 Blackbox AI — 用于客户筛选、市场研究与快速原型。三语：越南语母语、英语 IELTS 5.5 (准备 PTE C1)、中文工作。",
+    hHighlights: "亮点",
+    hl1: "AI-first 工作流作为日常作业系统 — ChatGPT、Gemini、Claude 与 NotebookLM 用于客户过滤与筛选、竞争市场研究与摘要；Stitch AI 与 Blackbox AI 用于快速设计与程序原型。",
+    hl2: "独立建立并管理 1,150+ 多通路客户资料库 (1,000+ Instagram、150+ Line / Messenger) — 5 年越南社群销售经验，零付费广告、推荐驱动的客户来源。",
+    hl3: "跨文化 Operator — 五年连接越南社群商业文化与台湾结构化职场 (桃园 Unimicron operator、Askey ODM QC 线纪律、士林夜市 SOP 零售)。",
+    hl4: "GPA 4.00/4.00 — 铭传大学国际企业与营销学士 (2025 年 6 月)；毕业论文：480 样本越南–台湾电商信任研究，使用回归与群集分析。",
+    hExp: "经历",
+    e0Title: "生产线 Operator (试用期)", e0Org: "Unimicron 欣兴电子，桃园市龟山区，台湾", e0Date: "2026 年 5 月 – 至今",
+    e0b1: "S1/Sy 生产线 — PCB 相关制程机台 operator，三个月试用期。",
+    e0b2: "是有意安排的过渡角色，在找寻合适 Sales / BD / GTM 职位的同时 — 让我留在台湾、保持语言新鲜、支持求职。",
+    e0b3: "建立在 Askey ODM 既有 QC 线纪律之上。",
+    e1Title: "房地产业务 (家族事业)", e1Org: "独立房地产，胡志明市，越南", e1Date: "2020 – 至今",
+    e1b1: "5+ 年独立建立并管理 1,150+ 多通路客户资料库 (1,000+ Instagram、150+ Line / Messenger) — 完整掌握漏斗：潜客、筛选、CRM 到跟进与成交 — 零付费广告。",
+    e1b2: "依年龄分群跨 4 个通路执行内容策略：Facebook Groups 给中年信任型买家、Instagram 给同龄与年轻约 10 岁买家、Threads 漏斗上层诱导、Messenger / Line 一对一转换 — 同一个房源拆成三种叙事。",
+    e1b3: "使用 AI 工具 (ChatGPT、Gemini、NotebookLM) 为来讯评分筛选、摘要竞品房源、大规模撰写双语回复 — 缩短回应时间提升回覆到看房的转换率。",
+    e1b4: "持有 5–10 个胡志明市 6 区、8 区与 Bình Chánh 的住宅组合 — Sổ hồng riêng 与 Vi bằng 产权；双语 (越/英) 议价、看房与合约文件配合资深经纪人。推荐是最大的客源。",
+    e2Title: "品管 Operator (兼职)", e2Org: "Askey 电脑 (ODM)，台北，台湾", e2Date: "2025 年 10–12 月",
+    e2b1: "在 Askey 电脑扫描器组装线执行 in-line QC — 全球电子品牌的 ODM — 依 SOP 执行功能与外观检验。",
+    e2b2: "记录缺陷并向线上工程师升级根因问题；维持每日产出报告与班次交接纪律。",
+    e2b3: "亲身体验台湾精实制造：QC 把关、operator–工程师交接与班末对账。",
+    e3Title: "库存与采购助理", e3Org: "INDEX — VNEX，台北，台湾", e3Date: "2024 年 6 月 – 2025 年 9 月",
+    e3b1: "在 SMEPOS 平台上端到端管理库存 — 进货、退货、对账与跨多个 SKU 线的供应商协调。",
+    e3b2: "执行客服热线与 LINE ID 赠品计划；调整再订购点以降低持有成本与缺货事件。",
+    e4Title: "玩具区主管与摊位经理", e4Org: "士林夜市 — 套圈圈，台北", e4Date: "2024 年 12 月 – 2025 年 5 月",
+    e4b1: "经营台北最热闹夜市之一的玩具区：商品陈列、定价、每日盘点与补货；指导兼职员工并在周末高峰提高平均客单价。",
+    e5Title: "营销实习", e5Org: "Waterson Corp.，台北，台湾", e5Date: "2023 年 10 月 – 2024 年 5 月",
+    e5b1: "从 Yelp、Google Business、Facebook 与 TikTok 开发 B2B 潜客；使用 AI 助手过滤与筛选潜客后交给销售。",
+    e5b2: "通过 HubSpot CRM 与 Gmail 进行外展；制作 Canva / PowerPoint 内容简报与竞争研究以指导社群策略。",
+    hEdu: "学历",
+    ed1Title: "工商管理硕士 (暂时休学)", ed1Org: "铭传大学，台北", ed1Date: "2025 年 9 月 – 2026 年 2 月",
+    ed1b1: "暂停修读以优先投入全职职涯机会 — 致力于先深化真实运营经验，有明确计划在职涯基础确立后继续研究所学业。",
+    ed2Title: "理学士 — 国际企业与贸易", ed2Org: "铭传大学，台北", ed2Date: "2023 年 9 月 – 2025 年 6 月",
+    ed2b1: "GPA 4.00/4.00 • 国际企业与营销专业证书 (2025 年 7 月)。",
+    ed2b2: "毕业专题 — 数据驱动跨文化研究：设计并执行 480 受访者越南–台湾电商信任调查；运用回归与群集分析分群买家行为并找出信任驱动因素。",
+    ed3Title: "外贸大学，胡志明市校区 (转学)", ed3Org: "胡志明市，越南", ed3Date: "2021 年 10 月 – 2023 年 8 月",
+    ed3b1: "平均 3.7–3.8 / 4.0 • 完成中文 I–IV • 学分转入铭传大学。",
+    hSkills: "技能",
+    skAI: "AI 工作流", skAIVal: "每天使用 ChatGPT、Gemini、Claude 和 NotebookLM 进行客户筛选、竞争市场研究、长文件摘要与双语撰写。使用 Stitch AI (UI) 和 Blackbox AI (code) 快速原型。自制业务外展与买家分群的提示词 playbook。",
+    skSocial: "社群电商", skSocialVal: "Facebook、Facebook Groups、Instagram、Threads — 年龄分群内容策略；Messenger、Zalo、Line 一对一跟进 playbook；推荐驱动、零广告预算管道。",
+    skMkt: "营销与业务", skMktVal: "数字营销、整合营销传播、HubSpot CRM、Gmail 外展、通过 Yelp 和 Google Business 开发 B2B 潜客、CRM 卫生与漏斗报告。",
+    skData: "数据与分析", skDataVal: "问卷设计、回归与群集分析 (480 样本毕业研究)；进阶 Microsoft Excel、Google Workspace、Asana；Canva 和 PowerPoint 视觉叙事。",
+    skOps: "运营与品管", skOpsVal: "库存管理 (SMEPOS)、采购、供应商协调、夜市零售管理、in-line QC 检验与缺陷记录 (Askey ODM 扫描器线；目前 Unimicron PCB 线)。",
+    skLang: "语言", skLangVal: "越南语 (母语)；英语 (IELTS 5.5 / B2 — 准备 PTE C1)；中文 (工作 — FTU 中文 I–IV + MCU 基础/中级中文，持续)。",
+    skLearn: "目前学习", skLearnVal: "PTE (英语 C1)；中文持续；首次接触机器学习、3D 设计与 web / 移动 app 设计。近期目标：今天是懂数据的营销人；两年内成为数据与设计兼具的混合型人才。",
+  },
+};
+
+let lang = localStorage.getItem('marshall-cv-lang') || 'en';
+const EN_DEFAULTS = {};
+document.querySelectorAll('[data-i18n]').forEach(el => {
+  EN_DEFAULTS[el.dataset.i18n] = el.textContent;
+});
+
+function applyLang() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const txt = lang === 'en' ? EN_DEFAULTS[key] : (I18N[lang]?.[key] ?? EN_DEFAULTS[key]);
+    if (txt) el.textContent = txt;
+  });
+  document.querySelectorAll('.lang-bar button[data-lang]').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+}
+
+document.querySelectorAll('.lang-bar button[data-lang]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    lang = btn.dataset.lang;
+    localStorage.setItem('marshall-cv-lang', lang);
+    applyLang();
+  });
+});
+
+applyLang();
+</script>
+
+</body>
+</html>
